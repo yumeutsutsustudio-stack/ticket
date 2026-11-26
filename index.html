@@ -588,6 +588,89 @@ form.edit h3,.edit h3{letter-spacing:.03em}
 .songtop{font-size:13px;color:var(--muted);margin:-6px 0 14px;overflow-wrap:anywhere}
 @media (max-width:600px){.bnav{grid-template-columns:repeat(5,1fr)}}
 
+/* ===== v3: 半券（行ったライブ） ===== */
+.stub.card.used{opacity:.9;-webkit-mask:linear-gradient(#000 0 0) left/calc(100% - 6px) 100% no-repeat,radial-gradient(circle at 100% 50%,transparent 4px,#000 4.6px) right/6px 12px repeat-y;mask:linear-gradient(#000 0 0) left/calc(100% - 6px) 100% no-repeat,radial-gradient(circle at 100% 50%,transparent 4px,#000 4.6px) right/6px 12px repeat-y}
+.usedst{position:absolute;right:28px;bottom:16px;transform:rotate(-12deg);border:3px double var(--c-end);color:var(--c-end);border-radius:8px;padding:2px 12px;font-family:var(--f-display);font-size:22px;letter-spacing:.12em;line-height:1.2;text-align:center;opacity:.6;pointer-events:none;z-index:1}
+.usedst small{display:block;font-family:var(--f-mono);font-size:10px;letter-spacing:.1em}
+.usedmini{position:absolute;right:10px;top:calc(62% - 30px);transform:rotate(-10deg);border:2px double rgba(255,255,255,.85);color:#fff;border-radius:6px;padding:0 8px;font-family:var(--f-display);font-size:14px;letter-spacing:.1em;opacity:.8}
+
+/* ===== v3: 入場画面 ===== */
+#passDlg{width:100vw;height:100dvh;max-width:none;max-height:none;margin:0;border-radius:0;padding:0;background:radial-gradient(900px 600px at 80% -10%,color-mix(in srgb,var(--accent) 45%,transparent),transparent 60%),#07060C;color:#fff;overflow:auto}
+#passDlg::backdrop{background:#000}
+.pwrap{min-height:100%;display:flex;flex-direction:column;align-items:center;gap:16px;padding:max(14px,env(safe-area-inset-top,0px)) 16px max(20px,env(safe-area-inset-bottom,0px))}
+.ptop{width:min(560px,100%);display:flex;justify-content:space-between;align-items:center}
+.pclock{font-family:var(--f-mono);font-size:15px;font-weight:700;letter-spacing:.1em;opacity:.85}
+.ptop button{border:0;background:rgba(255,255,255,.14);color:#fff;border-radius:999px;width:44px;height:44px;font-size:20px}
+.pticket{position:relative;width:min(560px,100%);background:linear-gradient(160deg,#1E1A2E,#120F1C);border-radius:20px;padding:22px 22px 18px;box-shadow:0 0 0 1px rgba(255,255,255,.12),0 30px 60px -20px color-mix(in srgb,var(--accent) 60%,transparent);overflow:hidden;display:flex;flex-direction:column;gap:12px}
+.pticket::before,.pticket::after{content:"";position:absolute;top:calc(62% - 12px);width:24px;height:24px;border-radius:50%;background:#07060C}
+.pticket::before{left:-12px}.pticket::after{right:-12px}
+.pholo{position:absolute;left:0;right:0;top:0;height:8px;background:linear-gradient(90deg,#ff9ad5,#9ee7ff,#fff2a8,#c6a4ff,#9effd6,#ff9ad5);background-size:220% 100%}
+@media (prefers-reduced-motion:no-preference){.pholo{animation:holo 4s linear infinite}}
+.peb{font-family:var(--f-mono);font-size:12px;letter-spacing:.3em;color:var(--accent);font-weight:700;margin-top:6px}
+.pname{font-family:var(--f-display);font-size:clamp(28px,8vw,44px);line-height:1.15;overflow-wrap:anywhere}
+.psub{margin:0;opacity:.8;font-size:15px;overflow-wrap:anywhere}
+.pdate{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;font-family:var(--f-mono)}
+.pdate b{font-family:var(--f-display);font-weight:400;font-size:38px;line-height:1;color:var(--accent)}
+.pdate span{opacity:.85;font-size:15px;font-weight:700}
+.pseat{display:grid;grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:8px;margin-top:4px;border-top:2px dashed rgba(255,255,255,.25);padding-top:14px}
+.pseat div{background:rgba(255,255,255,.07);border-radius:12px;padding:8px 10px}
+.pseat dt{font-family:var(--f-mono);font-size:10px;letter-spacing:.18em;opacity:.7;font-weight:700}
+.pseat dd{margin:0;font-family:var(--f-display);font-size:30px;line-height:1.15;overflow-wrap:anywhere}
+.pseat .wide{grid-column:1/-1}
+.pseat .wide dd{font-family:var(--f-body);font-weight:700;font-size:18px}
+.pseat .num{grid-column:1/-1;background:var(--accent);color:var(--accent-ink)}
+.pseat .num dd{font-size:44px}
+.pbar{height:56px;border-radius:6px;background:repeating-linear-gradient(90deg,#fff 0 3px,transparent 3px 5px,#fff 5px 6px,transparent 6px 10px,#fff 10px 14px,transparent 14px 16px);opacity:.9;margin-top:4px}
+.pserial{font-family:var(--f-mono);font-size:12px;letter-spacing:.2em;opacity:.7;text-align:center}
+.pnote{width:min(560px,100%);margin:0;font-size:12px;opacity:.7;text-align:center}
+.pacts{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.pacts .btn.ghost{color:#fff;border-color:rgba(255,255,255,.3)}
+
+/* ===== v3: 年間まとめ・遠征マップ ===== */
+.memtools{display:flex;gap:8px;flex-wrap:wrap;margin:-4px 0 14px}
+.btn:disabled{opacity:.35;cursor:default}
+#recapDlg{width:min(680px,calc(100vw - 16px))}
+.recap{display:flex;flex-direction:column;gap:14px;padding:20px}
+.rchead{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.rchead b{font-family:var(--f-display);font-weight:400;font-size:22px}
+.rcbig{background:linear-gradient(135deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--c-live)));color:var(--accent-ink);border-radius:16px;padding:18px 20px;display:flex;align-items:flex-end;gap:10px;flex-wrap:wrap}
+.rcbig .n{font-family:var(--f-display);font-size:64px;line-height:1}
+.rcbig .t{font-weight:700;font-size:16px;padding-bottom:8px}
+.rcgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px}
+.rcgrid div{background:var(--bg);border-radius:12px;padding:10px 12px}
+.rcgrid .k{display:block;font-size:12px;color:var(--muted);font-weight:700}
+.rcgrid .v{font-family:var(--f-display);font-size:24px;line-height:1.2;overflow-wrap:anywhere}
+.rcgrid .v small{font-family:var(--f-body);font-size:12px;margin-left:2px}
+.rcsec h4{margin:0 0 6px;font-size:13px;color:var(--muted);letter-spacing:.08em}
+.rcrank{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px}
+.rcrank li{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:8px;align-items:center;background:var(--bg);border-radius:8px;padding:6px 10px;font-size:14px}
+.rcrank .no{font-family:var(--f-mono);font-weight:700;color:var(--accent)}
+.rcrank .nm{min-width:0;overflow-wrap:anywhere;font-weight:700}
+.rcrank .c{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.rcbest{background:var(--bg);border-radius:12px;padding:12px 14px;border-left:4px solid var(--c-result)}
+.rcbest b{font-size:17px}
+.rctl{list-style:none;margin:0;padding:0 0 0 14px;border-left:2px solid var(--line);display:flex;flex-direction:column;gap:6px}
+.rctl li{position:relative;font-size:14px;overflow-wrap:anywhere}
+.rctl li::before{content:"";position:absolute;left:-20px;top:7px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.rctl small{color:var(--muted);font-family:var(--f-mono);margin-right:6px}
+.jmap{margin:0 0 14px}
+.jmhead{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.jmhead h3{margin:0}
+.jmhead select{border:1px solid var(--line);border-radius:8px;padding:4px 8px;background:var(--bg);font-size:13px}
+.tiles{display:grid;grid-template-columns:repeat(14,minmax(0,1fr));gap:3px;max-width:520px;margin:0 auto}
+.tile{aspect-ratio:1;border:0;border-radius:5px;background:var(--bg);font-size:10px;font-weight:700;color:var(--muted);display:grid;place-items:center;padding:0;line-height:1;min-width:0;overflow:hidden}
+.tile.l1{background:color-mix(in srgb,var(--accent) 32%,var(--surface));color:var(--ink)}
+.tile.l2{background:color-mix(in srgb,var(--accent) 62%,var(--surface));color:var(--ink)}
+.tile.l3{background:var(--accent);color:var(--accent-ink)}
+.tile.home{box-shadow:inset 0 0 0 2px var(--ink)}
+.tile.sel{outline:2px solid var(--ink);outline-offset:1px}
+@media (max-width:600px){.tile{font-size:8px;border-radius:3px}.tiles{gap:2px}}
+.jlegend{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;font-size:12px;color:var(--muted);margin-top:10px}
+.jlegend span{display:inline-flex;align-items:center;gap:4px}
+.jlegend i{width:12px;height:12px;border-radius:3px;display:inline-block}
+.jsum{text-align:center;font-size:13px;margin:8px 0 0}
+.jsel{margin-top:10px}
+
 /* ===== v2: 追加スキン ===== */
 :root[data-skin="stage"]{
   --bg:#0A0908; --surface:#17140F; --ink:#F6F1E7; --muted:#B3A88F; --line:#3A3326;
@@ -722,6 +805,10 @@ body.standalone [data-bg]{display:none!important}
   <button type="button" data-nav="mem"><span class="bi" aria-hidden="true">📸</span>思い出</button>
   <button type="button" data-nav="money"><span class="bi" aria-hidden="true">💰</span>お金</button>
 </nav>
+
+<dialog id="passDlg" aria-label="入場画面"><div class="pwrap" id="passBody"></div></dialog>
+
+<dialog id="recapDlg" aria-labelledby="rcTtl"><div class="recap" id="recapBody"></div></dialog>
 
 <dialog id="packDlg" aria-labelledby="packTtl">
   <div class="edit" style="display:flex;flex-direction:column;gap:12px;padding:20px">
@@ -889,6 +976,7 @@ body.standalone [data-bg]{display:none!important}
       <label class="field">開場時刻<input type="time" id="f-doorsTime"></label>
       <label class="field" id="liveEndField" hidden>最終日（複数日開催のとき）<input type="date" id="f-liveEnd"><span class="hint">1日だけなら空欄でOK</span></label>
       <label class="field">会場<input id="f-venue" placeholder="例：日本武道館"></label>
+      <label class="field">会場の都道府県<select id="f-pref"></select><span class="hint" id="prefHint"></span></label>
       <label class="field">受付の種類<input id="f-kind" list="kinds" placeholder="例：FC先行"></label>
     </div>
     <datalist id="kinds"><option value="FC先行"><option value="オフィシャル先行"><option value="プレイガイド先行"><option value="一般発売"><option value="リセール"><option value="出演者先行"><option value="早割・超早割"></datalist>
@@ -1315,7 +1403,7 @@ function renderHero(){
       <span class="count">${n<0?'<b>開催中！</b>':n===0?'<b>今日！</b>':n===1?'<b>明日！</b>':`あと <b>${n}</b> 日`}</span>
       ${tm?`<span class="tminfo">${esc(tm)}</span>`:''}
       ${n<=14?tripHTML(ev):''}
-      <div class="links">${ev.venue?`<a href="${esc(mapUrl(ev))}" target="_blank" rel="noopener">📍 会場の地図</a>`:''}<button type="button" data-pack="${ev.id}">🎒 持ち物${packCount(ev)}</button><button type="button" data-cost="${ev.id}">💰 ${costTotal(ev)?yen(costTotal(ev)):'費用'}</button><button type="button" data-trip="${ev.id}">🧳 遠征メモ</button><button type="button" data-bg="${ev.id}">🖼 背景</button>${gcalItems(ev).length?`<button type="button" data-gcal="${ev.id}">${gcalBtnLabel(ev)}</button>`:''}</div>
+      <div class="links">${ev.venue?`<a href="${esc(mapUrl(ev))}" target="_blank" rel="noopener">📍 会場の地図</a>`:''}<button type="button" data-pass="${ev.id}">🎫 入場画面</button><button type="button" data-img="${ev.id}">📷 画像</button><button type="button" data-pack="${ev.id}">🎒 持ち物${packCount(ev)}</button><button type="button" data-cost="${ev.id}">💰 ${costTotal(ev)?yen(costTotal(ev)):'費用'}</button><button type="button" data-trip="${ev.id}">🧳 遠征メモ</button><button type="button" data-bg="${ev.id}">🖼 背景</button>${gcalItems(ev).length?`<button type="button" data-gcal="${ev.id}">${gcalBtnLabel(ev)}</button>`:''}</div>
       <div class="barcode" aria-hidden="true"></div><span class="serial" aria-hidden="true">No.${serial(ev)}</span>
       ${rest?`<span class="after">このあと ${rest} 公演が控えています</span>`:''}
       <div class="admit" aria-hidden="true"><span>ADMIT ONE</span></div>
@@ -1350,7 +1438,7 @@ function card(ev){
   const date=ev.live?dateBlock(ev,false):'<div class="date none"><span class="d">日程<br>未定</span></div>';
   const steps=STEPS.map(s=>{const v=ev[s.k];const end=s.k==='live'&&multiDay(ev);const past=v&&(end?lastDay(ev):v)<t;const sk=s.k==='live'&&fes?'fes':s.k;return `<li class="s-${sk} ${past?'past':''} ${v?'':'blank'}"><span class="l">${s.label}</span><span class="v">${v?(end?fmt(v)+'〜':fmt(v,ev[s.k+'Time'])):'—'}</span></li>`}).join('');
   const bg=bgAttr(ev);
-  return `<article class="stub card ${fes?'fes':''} ${inactive(ev)||isPast(ev)?'dim':''} ${bg.cls}"${bg.st}>${holoHTML(ev)}${date}<div class="body">
+  return `<article class="stub card ${fes?'fes':''} ${inactive(ev)||isPast(ev)?'dim':''} ${isUsed(ev)?'used':''} ${bg.cls}"${bg.st}>${holoHTML(ev)}${usedHTML(ev)}${date}<div class="body">
     <div class="row1"><div style="min-width:0"><div class="artist">${esc(name(ev))}</div>${metaLine(ev)?`<div class="meta">${esc(metaLine(ev))}</div>`:''}${ev.companions?`<div class="meta">👥 同行：${esc(ev.companions)}</div>`:''}</div>
     <div class="ctrls">${fes?'<span class="pill fes">FES</span>':''}${ev.kind?`<span class="pill">${esc(ev.kind)}</span>`:''}
       <select class="status" data-s="${esc(ev.status)}" data-status="${ev.id}" aria-label="${esc(name(ev))}の状態">${STATUS.map(s=>`<option ${s===ev.status?'selected':''}>${s}</option>`).join('')}</select>
@@ -1360,7 +1448,7 @@ function card(ev){
     ${lineupHTML(ev)}
     ${seatHTML(ev)}
     <ul class="steps">${steps}</ul>
-    ${!isPast(ev)&&!inactive(ev)?tripHTML(ev)+cardActs(ev):wentTo(ev)||costTotal(ev)?`<div class="cardacts">${costBtn(ev)}</div>`:''}
+    ${!isPast(ev)&&!inactive(ev)?tripHTML(ev)+cardActs(ev):wentTo(ev)||costTotal(ev)?`<div class="cardacts">${wentTo(ev)?imgBtn(ev):''}${costBtn(ev)}</div>`:''}
     ${ev.memo?`<p class="memo">${esc(ev.memo)}</p>`:''}
     <span class="serial" aria-hidden="true">No.${serial(ev)}</span>
   </div></article>`;
@@ -1482,6 +1570,10 @@ document.addEventListener('click',e=>{
   const pk=e.target.closest('[data-pack]');if(pk){openPack(pk.dataset.pack);return}
   const cs=e.target.closest('[data-cost]');if(cs){openCost(cs.dataset.cost);return}
   const my=e.target.closest('[data-my]');if(my){moneyYear+=+my.dataset.my;renderMoney();return}
+  const ps=e.target.closest('[data-pass]');if(ps){openPass(ps.dataset.pass);return}
+  const im=e.target.closest('[data-img]');if(im){saveTicketImg(im.dataset.img,im);return}
+  const rc=e.target.closest('[data-recap]');if(rc){openRecap(+rc.dataset.recap);return}
+  const mp=e.target.closest('[data-mpref]');if(mp){mapSel=mapSel===mp.dataset.mpref?'':mp.dataset.mpref;renderMem();return}
   const gc=e.target.closest('[data-gcal]');if(gc){openGcal(gc.dataset.gcal);return}
   const pc=e.target.closest('[data-pclip]');if(pc){const [m,id]=pc.dataset.pclip.split('|');startClip(m,[id]);return}
   const dc=e.target.closest('[data-dayclip]');if(dc&&selDay){startClip(dc.dataset.dayclip,plansOn(selDay).map(p=>p.id));return}
@@ -1524,6 +1616,7 @@ function openForm(id){
   $('f-artist').value=isFes(ev)?'':(ev.artist||'');artistPicker.close();
   $('f-status').value=ev.status||'未応募';
   {const st=seatOf(ev);for(const [k] of SEAT_F)$('f-seat-'+k).value=st[k]||''}
+  $('f-pref').value=PREFS.some(p=>p[0]===ev.pref)?ev.pref:'';prefHint();
   for(const s of STEPS){$('f-'+s.k).value=ev[s.k]||'';$('f-'+s.k+'Time').value=ev[s.k+'Time']||''}
   $('delBtn').hidden=!id;$('delBtn').textContent='削除';$('delBtn').className='btn ghost small';
   $('formErr').hidden=true;
@@ -1623,6 +1716,7 @@ $('form').addEventListener('submit',async e=>{
   data.liveEnd=fes?$('f-liveEnd').value:'';
   data.doorsTime=$('f-doorsTime').value;
   data.seat={};for(const [k] of SEAT_F)data.seat[k]=$('f-seat-'+k).value.trim().slice(0,30);
+  data.pref=$('f-pref').value;
   if(data.liveEnd&&!data.live){formError('最終日を入れるときは、初日も入力してください。');return}
   if(data.liveEnd&&data.liveEnd<data.live){formError('最終日は初日より後の日付にしてください。');return}
   if(data.liveEnd===data.live)data.liveEnd='';
@@ -1834,6 +1928,8 @@ function renderMem(){
     </div>
     ${top.length?`<p class="memtop">よく見たアーティスト：${top.map(([n,c])=>`${esc(n)}（${c}回）`).join('、')}</p>`:''}
     ${songTopHTML(went)}
+    <div class="memtools"><button type="button" class="btn small" data-recap="${new Date().getFullYear()}">📊 ${new Date().getFullYear()}年のまとめ</button></div>
+    ${mapHTML(went)}
     <div class="album">${went.map(albumCard).join('')}</div>`;
 }
 function memCard(ev){
@@ -2189,7 +2285,7 @@ function albumCard(ev){
   const add=(nS?`<span class="add">♪ セトリ ${nS}曲</span>`:'')+(hasRecord(ev)?'':'<span class="add">＋ 記録する</span>');
   if(!ph.length){const ap=photoFor(ev);if(ap)return `<button type="button" class="acard" data-mem="${ev.id}" aria-label="${esc(name(ev))} ${dt} の記録を開く"><img src="${blob(ap.id)}" alt="" loading="lazy" style="object-position:50% ${ap.y}%"><span class="shade"></span><span class="cap"><span class="dt">${dt}</span><span class="nm">${esc(name(ev))}</span>${starsHTML(ev.rating)}${add}</span></button>`}
   if(ph.length)return `<button type="button" class="acard" data-mem="${ev.id}" aria-label="${esc(name(ev))} ${dt} の記録を開く"><img src="${blob(ph[0])}" alt="" loading="lazy"><span class="shade"></span><span class="np vw" data-viewev="${ev.id}" data-vi="0" role="button" tabindex="0" aria-label="${esc(name(ev))}の写真を拡大して見る">🔍 ${ph.length>1?ph.length+'枚':'拡大'}</span><span class="cap"><span class="dt">${dt}</span><span class="nm">${esc(name(ev))}</span>${starsHTML(ev.rating)}${add}</span></button>`;
-  return `<button type="button" class="acard stubc s-${isFes(ev)?'fes':'live'}" data-mem="${ev.id}" aria-label="${esc(name(ev))} ${dt} の記録を開く"><span class="big">${esc(name(ev))}</span><span class="perf"></span><span class="cap"><span class="dt">${dt}${ev.venue?' ・ '+esc(ev.venue):''}</span>${starsHTML(ev.rating)}${add}</span></button>`;
+  return `<button type="button" class="acard stubc s-${isFes(ev)?'fes':'live'}" data-mem="${ev.id}" aria-label="${esc(name(ev))} ${dt} の記録を開く"><span class="big">${esc(name(ev))}</span><span class="usedmini" aria-hidden="true">USED</span><span class="perf"></span><span class="cap"><span class="dt">${dt}${ev.venue?' ・ '+esc(ev.venue):''}</span>${starsHTML(ev.rating)}${add}</span></button>`;
 }
 
 /* ===== ホームのまとめ・今週 ===== */
@@ -2232,7 +2328,7 @@ function hasTrip(ev){const t=tripOf(ev);return TRIP_F.some(([k])=>sv(t[k]))}
 function tripHTML(ev){if(!hasTrip(ev))return '';const t=tripOf(ev);return `<ul class="trip" aria-label="遠征メモ">${TRIP_F.filter(([k])=>sv(t[k])).map(([k,i,l])=>`<li><span aria-hidden="true">${i}</span><span><span class="vh">${l}：</span>${esc(sv(t[k]))}</span></li>`).join('')}</ul>`}
 function tripText(ev){const t=tripOf(ev);return TRIP_F.filter(([k])=>sv(t[k])).map(([k,,l])=>`${l}：${sv(t[k])}`).join('\n')}
 function mapUrl(ev){return 'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(ev.venue||'')}
-function cardActs(ev){return `<div class="cardacts">${packBtn(ev)}${costBtn(ev)}<button type="button" data-trip="${ev.id}" class="${hasTrip(ev)?'on':''}">🧳 遠征メモ${hasTrip(ev)?' ✓':''}</button><button type="button" data-bg="${ev.id}" class="${photoFor(ev)?'on':''}">🖼 背景${photoFor(ev)?' ✓':''}</button>${gcalItems(ev).length?`<button type="button" data-gcal="${ev.id}" class="${gcalCount(ev).todo?'':'on'}">${gcalBtnLabel(ev)}</button>`:''}${ev.venue?`<a href="${esc(mapUrl(ev))}" target="_blank" rel="noopener">📍 地図</a>`:''}</div>`}
+function cardActs(ev){return `<div class="cardacts">${passBtn(ev)}${packBtn(ev)}${costBtn(ev)}${imgBtn(ev)}<button type="button" data-trip="${ev.id}" class="${hasTrip(ev)?'on':''}">🧳 遠征メモ${hasTrip(ev)?' ✓':''}</button><button type="button" data-bg="${ev.id}" class="${photoFor(ev)?'on':''}">🖼 背景${photoFor(ev)?' ✓':''}</button>${gcalItems(ev).length?`<button type="button" data-gcal="${ev.id}" class="${gcalCount(ev).todo?'':'on'}">${gcalBtnLabel(ev)}</button>`:''}${ev.venue?`<a href="${esc(mapUrl(ev))}" target="_blank" rel="noopener">📍 地図</a>`:''}</div>`}
 let tripId=null;
 function openTrip(id){
   if(!db){showBanner('この表示では保存できません。claude.ai にサインインして開いてください。');return}
@@ -2811,6 +2907,257 @@ function songTopHTML(went){
   const top=Object.entries(cnt).filter(x=>x[1]>1).sort((a,b)=>b[1]-a[1]).slice(0,5);
   return `<p class="songtop">♪ セトリに記録した曲 のべ${total}曲${top.length?`・よく聴いた曲：${top.map(([k,c])=>`${esc(nm[k])}（${c}回）`).join('、')}`:''}</p>`;
 }
+/* ===== v3: 半券 ===== */
+function isUsed(ev){return wentTo(ev)&&isPast(ev)}
+function usedHTML(ev){if(!isUsed(ev))return '';const d=parse(lastDay(ev));return `<span class="usedst" aria-label="行ったライブ">USED<small>${d.getFullYear()}.${String(d.getMonth()+1).padStart(2,'0')}.${String(d.getDate()).padStart(2,'0')}</small></span>`}
+
+/* ===== v3: 入場画面 ===== */
+function mineTicket(ev){return (ev.status==='当選'||ev.status==='支払済')&&!!ev.live&&!isPast(ev)}
+function passBtn(ev){return mineTicket(ev)?`<button type="button" data-pass="${ev.id}">🎫 入場画面</button>`:''}
+function imgBtn(ev){return `<button type="button" data-img="${ev.id}">📷 画像</button>`}
+let passClock=null;
+function openPass(id){
+  const ev=events.find(e=>e.id===id);if(!ev)return;
+  const s=seatOf(ev), d=ev.live?parse(ev.live):null;
+  const box=(k,en,l,cls)=>sv(s[k])?`<div class="${cls||''}"><dt>${en} ${l}</dt><dd>${esc(sv(s[k]))}</dd></div>`:'';
+  const seat=box('type','TYPE','席の種類','wide')+box('gate','GATE','入場口',sv(s.gate).length>3?'wide':'')+box('block','BLOCK','ブロック')+box('row','ROW','列')+box('no','SEAT','番')+box('num','No.','整理番号','num');
+  $('passBody').innerHTML=`<div class="ptop"><span class="pclock" id="pClock"></span><button type="button" id="passClose" aria-label="閉じる">✕</button></div>
+    <div class="pticket"><div class="pholo" aria-hidden="true"></div>
+      <span class="peb">${isFes(ev)?'FESTIVAL':'LIVE'} · ADMIT ONE</span>
+      <div class="pname">${esc(name(ev))}</div>
+      ${[isFes(ev)?'':ev.title,ev.venue].filter(Boolean).length?`<p class="psub">${esc([isFes(ev)?'':ev.title,ev.venue].filter(Boolean).join(' ・ '))}</p>`:''}
+      ${d?`<div class="pdate"><b>${d.getMonth()+1}/${d.getDate()}</b><span>(${WD[d.getDay()]})</span>${times(ev)?`<span>${esc(times(ev))}</span>`:''}</div>`:''}
+      ${seat?`<dl class="pseat">${seat}</dl>`:'<p class="psub" style="font-size:13px">座席・整理番号は「編集」から入れると、ここに大きく出ます。</p>'}
+      <div class="pbar" aria-hidden="true"></div>
+      <span class="pserial">No.${serial(ev)}</span>
+    </div>
+    <p class="pnote">これは手帳の控えです。入場には公式の電子チケット・紙チケットを使ってください。</p>
+    <div class="pacts"><button type="button" class="btn" data-img="${ev.id}">📷 画像で保存</button><button type="button" class="btn ghost" id="passClose2">閉じる</button></div>`;
+  const tick=()=>{const n=new Date();const el=$('pClock');if(el)el.textContent=`${n.getMonth()+1}/${n.getDate()} ${String(n.getHours()).padStart(2,'0')}:${String(n.getMinutes()).padStart(2,'0')}:${String(n.getSeconds()).padStart(2,'0')}`};
+  tick();clearInterval(passClock);passClock=setInterval(tick,1000);
+  $('passDlg').showModal();
+}
+$('passDlg').addEventListener('click',e=>{if(e.target.closest('#passClose,#passClose2'))$('passDlg').close()});
+$('passDlg').addEventListener('close',()=>{clearInterval(passClock);passClock=null});
+
+/* ===== v3: チケットを画像で保存 ===== */
+let dlNs=null;
+(async()=>{try{dlNs=window.claude&&window.claude.use?await window.claude.use('downloads'):null}catch(e){dlNs=null}})();
+function cssVar(n,fb){const v=getComputedStyle(document.documentElement).getPropertyValue(n).trim();return /^#[0-9a-f]{3,8}$/i.test(v)?v:fb}
+function rr(c,x,y,w,h,r){c.beginPath();c.moveTo(x+r,y);c.arcTo(x+w,y,x+w,y+h,r);c.arcTo(x+w,y+h,x,y+h,r);c.arcTo(x,y+h,x,y,r);c.arcTo(x,y,x+w,y,r);c.closePath()}
+function fitText(c,t,maxW,size,family,min,wt){wt=wt||'';let s=size;c.font=`${wt}${s}px ${family}`;while(c.measureText(t).width>maxW&&s>min){s-=2;c.font=`${wt}${s}px ${family}`}if(c.measureText(t).width>maxW){while(t.length>1&&c.measureText(t+'…').width>maxW)t=t.slice(0,-1);t+='…'}return t}
+async function drawTicket(ev){
+  const W=1200,H=560,SX=270,AX=W-84,acc=cssVar('--accent','#C2185B');
+  const DISP='"Dela Gothic One","Zen Kaku Gothic New",sans-serif', BODY='"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic UI",sans-serif', MONO='"JetBrains Mono",Consolas,monospace';
+  try{await Promise.all([document.fonts.load('40px "Dela Gothic One"'),document.fonts.load('700 20px "Zen Kaku Gothic New"'),document.fonts.load('700 20px "JetBrains Mono"')])}catch(e){}
+  const cv=document.createElement('canvas');cv.width=W;cv.height=H;const c=cv.getContext('2d');
+  rr(c,0,0,W,H,30);c.save();c.clip();
+  let g=c.createLinearGradient(0,0,W,H);g.addColorStop(0,'#211B33');g.addColorStop(1,'#0E0B16');c.fillStyle=g;c.fillRect(0,0,W,H);
+  g=c.createRadialGradient(W*.8,-40,10,W*.8,-40,700);g.addColorStop(0,acc+'AA');g.addColorStop(1,acc+'00');c.fillStyle=g;c.fillRect(0,0,W,H);
+  c.strokeStyle='rgba(255,255,255,.035)';c.lineWidth=1;for(let i=-H;i<W;i+=10){c.beginPath();c.moveTo(i,0);c.lineTo(i+H,H);c.stroke()}
+  /* admit strip (holo) */
+  g=c.createLinearGradient(AX,0,W,H);['#ff9ad5','#9ee7ff','#fff2a8','#c6a4ff','#9effd6'].forEach((col,i)=>g.addColorStop(i/4,col));
+  c.globalAlpha=.85;c.fillStyle=g;c.fillRect(AX,0,W-AX,H);c.globalAlpha=1;
+  c.save();c.translate(AX+(W-AX)/2,H/2);c.rotate(Math.PI/2);c.fillStyle='#1a1030';c.font=`700 22px ${MONO}`;c.textAlign='center';c.textBaseline='middle';c.fillText('A D M I T   O N E',0,0);c.restore();
+  /* date stub */
+  const d=ev.live?parse(ev.live):null;
+  c.fillStyle='rgba(255,255,255,.05)';c.fillRect(0,0,SX,H);
+  c.textAlign='center';c.textBaseline='alphabetic';c.fillStyle='rgba(255,255,255,.7)';c.font=`700 26px ${MONO}`;
+  if(d){c.fillText(`${d.getFullYear()}.${String(d.getMonth()+1).padStart(2,'0')}`,SX/2,200);c.fillStyle='#fff';c.font=`120px ${DISP}`;c.fillText(String(d.getDate()),SX/2,330);c.fillStyle='rgba(255,255,255,.75)';c.font=`700 28px ${BODY}`;c.fillText(WD[d.getDay()]+'曜日',SX/2,380);
+    if(multiDay(ev)){const e2=parse(lastDay(ev));c.fillStyle=cssVar('--c-fes','#3DD6A8');c.font=`700 24px ${MONO}`;c.fillText(`〜${e2.getMonth()+1}/${e2.getDate()}`,SX/2,420)}}
+  else{c.font=`700 30px ${BODY}`;c.fillText('日程未定',SX/2,H/2)}
+  c.fillStyle='rgba(255,255,255,.55)';c.font=`700 16px ${MONO}`;c.fillText('No.'+serial(ev),SX/2,H-40);
+  /* perforation */
+  c.fillStyle='rgba(255,255,255,.35)';for(let y=34;y<H-30;y+=16){c.beginPath();c.arc(SX,y,2.6,0,Math.PI*2);c.fill()}
+  for(let y=34;y<H-30;y+=16){c.beginPath();c.arc(AX,y,2.2,0,Math.PI*2);c.fill()}
+  /* body */
+  const X=SX+44, MW=AX-X-36;c.textAlign='left';
+  c.fillStyle=acc;c.font=`700 22px ${MONO}`;c.fillText(isUsed(ev)?'THANK YOU FOR COMING':isFes(ev)?'FESTIVAL TICKET':'LIVE TICKET',X,78);
+  c.fillStyle='#fff';const nm=fitText(c,name(ev),MW,78,DISP,36);c.fillText(nm,X,170);
+  const subl=[isFes(ev)?'':ev.title,ev.venue].filter(Boolean).join('  ・  ');
+  if(subl){c.fillStyle='rgba(255,255,255,.78)';const t=fitText(c,subl,MW,30,BODY,18,'700 ');c.fillText(t,X,218)}
+  const tms=times(ev);if(tms){c.fillStyle='rgba(255,255,255,.7)';c.font=`700 24px ${MONO}`;c.fillText(tms,X,258)}
+  const ln=lineupOf(ev);if(ln.length){c.fillStyle=cssVar('--c-fes','#3DD6A8');c.font=`700 22px ${BODY}`;c.fillText(fitText(c,'お目当て  '+ln.join(' / '),MW,22,BODY,16,'700 '),X,tms?292:258)}
+  /* seat boxes */
+  const s=seatOf(ev);const f=SEAT_F.filter(([k])=>sv(s[k]));let bx=X;const by=320;
+  for(const [k,en,l] of f){const v=sv(s[k]);c.font=`${k==='type'?'700 26px '+BODY:'40px '+DISP}`;const w=Math.max(100,c.measureText(v).width+36);if(bx+w>AX-30)break;
+    rr(c,bx,by,w,96,14);c.fillStyle=k==='type'?acc:'rgba(255,255,255,.08)';c.fill();c.strokeStyle='rgba(255,255,255,.25)';c.lineWidth=2;c.stroke();
+    c.fillStyle=k==='type'?'#fff':'rgba(255,255,255,.65)';c.font=`700 15px ${MONO}`;c.fillText(`${en} ${l}`,bx+16,by+28);
+    c.fillStyle='#fff';c.font=`${k==='type'?'700 26px '+BODY:'40px '+DISP}`;c.fillText(v,bx+18,by+76);bx+=w+12}
+  /* barcode */
+  let x=X;const seed=serial(ev);for(let i=0;x<X+420;i++){const w=1+((seed.charCodeAt(i%seed.length)+i*7)%4);if(i%2===0){c.fillStyle='rgba(255,255,255,.85)';c.fillRect(x,H-92,w,52)}x+=w+1}
+  c.fillStyle='rgba(255,255,255,.5)';c.font=`700 14px ${MONO}`;c.fillText('LIVE TICKET BOOK',X,H-24);
+  /* USED stamp */
+  if(isUsed(ev)){c.save();c.translate(AX-200,H-130);c.rotate(-.2);c.globalAlpha=.8;c.strokeStyle='#FF5C6C';c.fillStyle='#FF5C6C';c.lineWidth=6;rr(c,-130,-60,260,120,16);c.stroke();c.lineWidth=2;rr(c,-118,-48,236,96,10);c.stroke();c.textAlign='center';c.font=`64px ${DISP}`;c.fillText('USED',0,20);c.font=`700 18px ${MONO}`;const e2=parse(lastDay(ev));c.fillText(`${e2.getFullYear()}.${String(e2.getMonth()+1).padStart(2,'0')}.${String(e2.getDate()).padStart(2,'0')}`,0,44);c.restore()}
+  c.restore();
+  /* punch notches (transparent) */
+  c.globalCompositeOperation='destination-out';for(const [px,py] of [[SX,0],[SX,H],[AX,0],[AX,H]]){c.beginPath();c.arc(px,py,20,0,Math.PI*2);c.fill()}
+  c.globalCompositeOperation='source-over';
+  return cv;
+}
+async function saveBlob(blob,fn){
+  if(dlNs){try{await dlNs.save({filename:fn,data:blob});toast('画像を保存しました');return}catch(e){const c=e&&e.code;if(c==='declined')return;if(c==='rate_limited'){toast('少し待ってからもう一度押してください');return}}}
+  try{const f=new File([blob],fn,{type:'image/png'});if(navigator.canShare&&navigator.canShare({files:[f]})){await navigator.share({files:[f]});return}}catch(e){if(e&&e.name==='AbortError')return}
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=fn;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},3000);
+  toast('画像をダウンロードしました');
+}
+async function saveTicketImg(id,btn){
+  const ev=events.find(e=>e.id===id);if(!ev)return;
+  if(btn)btn.disabled=true;
+  try{const cv=await drawTicket(ev);const blob=await new Promise(r=>cv.toBlob(r,'image/png'));if(!blob)throw new Error('blob');await saveBlob(blob,`live-ticket-${ev.live||'undated'}.png`)}
+  catch(e){showBanner('画像を作れませんでした。もう一度お試しください。')}
+  finally{if(btn)btn.disabled=false}
+}
+
+/* ===== v3: 都道府県・遠征マップ ===== */
+const PREFS=[['北海道',13,0],['青森',13,2],['岩手',13,3],['宮城',13,4],['秋田',12,3],['山形',12,4],['福島',12,5],['茨城',11,6],['栃木',11,5],['群馬',10,5],['埼玉',10,6],['千葉',11,7],['東京',10,7],['神奈川',9,7],['新潟',11,4],['富山',10,4],['石川',9,4],['福井',7,5],['山梨',9,6],['長野',9,5],['岐阜',8,5],['静岡',8,7],['愛知',8,6],['三重',6,7],['滋賀',6,6],['京都',5,6],['大阪',4,7],['兵庫',4,6],['奈良',5,7],['和歌山',5,8],['鳥取',3,6],['島根',2,6],['岡山',3,7],['広島',2,7],['山口',1,7],['徳島',4,9],['香川',4,8],['愛媛',3,8],['高知',3,9],['福岡',1,8],['佐賀',0,8],['長崎',0,9],['熊本',1,9],['大分',2,9],['宮崎',2,10],['鹿児島',1,10],['沖縄',0,11]];
+const prefFull=p=>p==='北海道'?p:p==='東京'?'東京都':p==='大阪'||p==='京都'?p+'府':p+'県';
+const prefShort=p=>({北海道:'北海',神奈川:'神奈',和歌山:'和歌',鹿児島:'鹿児'})[p]||p;
+const VENUE_PREF=[[/武道館|東京ドーム|有明|渋谷|新宿|六本木|お台場|豊洲|日比谷|代々木|両国|恵比寿|下北沢|中野|池袋|原宿|赤坂|品川|立川|八王子|調布|味の素|東京ガーデンシアター|東京体育館|Zepp ?(Haneda|DiverCity)|LINE CUBE|NHKホール|国際フォーラム/i,'東京'],[/さいたま|大宮|所沢|ベルーナ|メットライフ|西武ドーム|川口/i,'埼玉'],[/幕張|ZOZO|蘇我|船橋|舞浜|柏/i,'千葉'],[/横浜|みなとみらい|Kアリーナ|ぴあアリーナ|日産|川崎|相模原|KT ?Zepp|Zepp ?Yokohama|小田原/i,'神奈川'],[/京セラ|大阪城|フェスティバルホール|なんば|難波|梅田|心斎橋|万博記念|Zepp ?(Namba|Osaka)|堺|吹田|舞洲|インテックス大阪/i,'大阪'],[/バンテリン|ナゴヤドーム|名古屋|ガイシ|Zepp ?Nagoya|豊田|一宮/i,'愛知'],[/PayPayドーム|ペイペイ|マリンメッセ|博多|天神|北九州|Zepp ?Fukuoka|福岡/i,'福岡'],[/札幌|真駒内|Zepp ?Sapporo|旭川|函館|エスコンフィールド/i,'北海道'],[/仙台|セキスイハイム|ゼビオアリーナ仙台|利府/i,'宮城'],[/神戸|ワールド記念|姫路|尼崎|西宮|甲子園/i,'兵庫'],[/苗場|朱鷺メッセ|長岡/i,'新潟'],[/ひたちなか|水戸|つくば/i,'茨城'],[/金沢/i,'石川'],[/浜松|エコパ|沼津/i,'静岡'],[/那覇|宜野湾/i,'沖縄'],[/松山/i,'愛媛'],[/高松/i,'香川'],[/宇都宮/i,'栃木'],[/高崎|前橋/i,'群馬'],[/甲府|山中湖/i,'山梨'],[/盛岡/i,'岩手'],[/郡山|いわき/i,'福島'],[/松江/i,'島根'],[/倉敷/i,'岡山'],[/四日市|鈴鹿/i,'三重'],[/松本/i,'長野'],[/大津|びわ湖/i,'滋賀']];
+function guessPref(v){
+  v=String(v||'');if(!v)return '';
+  for(const [p] of PREFS)if(v.includes(prefFull(p))||v.includes(p+(p==='北海道'?'':p==='東京'?'都':'')))return p;
+  for(const [re,p] of VENUE_PREF)if(re.test(v))return p;
+  for(const [p] of PREFS)if(p.length>=2&&v.includes(p))return p;
+  return '';
+}
+function prefOf(ev){return PREFS.some(p=>p[0]===ev.pref)?ev.pref:guessPref(ev.venue)}
+$('f-pref').innerHTML='<option value="">（会場名から自動）</option>'+PREFS.map(([p])=>`<option value="${p}">${prefFull(p)}</option>`).join('');
+function prefHint(){const g=guessPref($('f-venue').value);$('prefHint').textContent=$('f-pref').value?'':g?`自動：${prefFull(g)}`:'会場名から分からないときは選んでください（遠征マップに使います）'}
+$('f-venue').addEventListener('input',prefHint);$('f-pref').addEventListener('change',prefHint);
+$('dlg').addEventListener('toggle',()=>{if($('dlg').open)prefHint()});
+let homePref='', mapSel='', homeLoaded=false;
+try{homePref=localStorage.getItem('ltt-home')||''}catch(e){}
+async function loadHome(){if(!db)return;try{const s=await db.doc('meta/home').get();const v=s.exists&&s.data().pref;if(v&&PREFS.some(p=>p[0]===v)&&v!==homePref){homePref=v;try{localStorage.setItem('ltt-home',v)}catch(e){}renderMem()}}catch(e){}}
+document.addEventListener('change',async e=>{if(e.target.id!=='homePref')return;homePref=e.target.value;try{localStorage.setItem('ltt-home',homePref)}catch(x){}renderMem();if(db)try{await db.doc('meta/home').set({pref:homePref,updatedAt:new Date().toISOString()})}catch(x){}});
+function mapHTML(went){
+  if(!homeLoaded&&db){homeLoaded=true;loadHome()}
+  const cnt={},list={};let unknown=0;
+  for(const e of went){const p=prefOf(e);if(!p){unknown++;continue}cnt[p]=(cnt[p]||0)+1;(list[p]=list[p]||[]).push(e)}
+  const n=Object.keys(cnt).length, away=went.filter(e=>{const p=prefOf(e);return p&&homePref&&p!==homePref}).length;
+  const tiles=PREFS.map(([p,c,r])=>{const k=cnt[p]||0,lv=k>=3?3:k;return `<button type="button" class="tile ${lv?'l'+lv:''} ${p===homePref?'home':''} ${p===mapSel?'sel':''}" style="grid-column:${c+1};grid-row:${r+1}" data-mpref="${p}" title="${prefFull(p)}${k?` ${k}回`:''}" aria-label="${prefFull(p)} ${k}回">${prefShort(p)}</button>`}).join('');
+  const sel=mapSel&&list[mapSel]?`<ul class="todo jsel">${list[mapSel].sort((a,b)=>sortKey(a)>sortKey(b)?-1:1).map(e=>`<li class="s-${isFes(e)?'fes':'live'}"><span class="tag">${esc(prefFull(mapSel))}</span><span class="what">${esc(name(e))}<small>${esc(e.venue||'')}</small></span><span class="left"><span class="dt">${fmt(e.live)}</span></span></li>`).join('')}</ul>`:mapSel?`<p class="emptynote jsel">${esc(prefFull(mapSel))}で行ったライブはまだありません。</p>`:'';
+  return `<section class="mpanel jmap" aria-label="遠征マップ"><div class="jmhead"><h3>🗾 遠征マップ</h3><label class="memmeta">住んでいる所 <select id="homePref"><option value="">選ぶ</option>${PREFS.map(([p])=>`<option value="${p}" ${p===homePref?'selected':''}>${prefFull(p)}</option>`).join('')}</select></label></div>
+    <div class="tiles">${tiles}</div>
+    <div class="jlegend"><span><i style="background:color-mix(in srgb,var(--accent) 32%,var(--surface))"></i>1回</span><span><i style="background:color-mix(in srgb,var(--accent) 62%,var(--surface))"></i>2回</span><span><i style="background:var(--accent)"></i>3回以上</span>${homePref?'<span><i style="box-shadow:inset 0 0 0 2px var(--ink)"></i>住んでいる所</span>':''}</div>
+    <p class="jsum">${n}都道府県で${went.length-unknown}本${homePref?` ・ 遠征 ${away}本`:''}${unknown?`<span class="memmeta">（場所が分からない公演 ${unknown}本：「編集」で都道府県を選べます）</span>`:''}</p>${sel}</section>`;
+}
+
+/* ===== v3: 年間まとめ ===== */
+function openRecap(y){renderRecap(y);$('recapDlg').showModal()}
+function renderRecap(y){
+  const ys=String(y), went=events.filter(e=>wentTo(e)&&e.live.startsWith(ys)).sort((a,b)=>sortKey(a)<sortKey(b)?-1:1);
+  const years=[...new Set(events.filter(wentTo).map(e=>+e.live.slice(0,4)))];
+  const head=`<div class="rchead"><button type="button" class="btn ghost small" data-rcy="${y-1}" ${years.some(v=>v<y)?'':'disabled'}>‹ ${y-1}</button><b id="rcTtl">${y}年のライブまとめ</b><button type="button" class="btn ghost small" data-rcy="${y+1}" ${years.some(v=>v>y)?'':'disabled'}>${y+1} ›</button></div>`;
+  const close=`<div class="formbtns"><div>${went.length?`<button type="button" class="btn ghost" data-rcimg="${y}">📷 画像で保存</button>`:''}</div><div class="r"><button type="button" class="btn" id="rcClose">閉じる</button></div></div>`;
+  if(!went.length){$('recapBody').innerHTML=head+`<p class="emptynote">${y}年に行ったライブはまだありません。</p>`+close;return}
+  const days=went.reduce((n,e)=>n+Math.round((parse(lastDay(e))-parse(e.live))/86400000)+1,0);
+  const venues=new Set(went.map(e=>e.venue).filter(Boolean)).size;
+  const prefs=new Set(went.map(prefOf).filter(Boolean));
+  const away=homePref?went.filter(e=>{const p=prefOf(e);return p&&p!==homePref}).length:null;
+  const cost=went.reduce((n,e)=>n+costTotal(e),0), costN=went.filter(e=>costTotal(e)).length;
+  const rank=(arr,k=5)=>{const m={},nm={};for(const x of arr){const key=norm(x);if(!key)continue;m[key]=(m[key]||0)+1;nm[key]=nm[key]||x}return Object.entries(m).sort((a,b)=>b[1]-a[1]).slice(0,k).map(([key,c])=>[nm[key],c])};
+  const artists=rank(went.flatMap(e=>isFes(e)?lineupOf(e):[e.artist]));
+  const songs=rank(went.flatMap(e=>[...new Set(songsOf(e))]));
+  const friends=rank(went.flatMap(e=>(e.companions||'').split(/[、,，]\s*/).map(s=>s.trim()).filter(Boolean)),3);
+  const mon={};for(const e of went){const m=+e.live.slice(5,7);mon[m]=(mon[m]||0)+1}
+  const topM=Object.entries(mon).sort((a,b)=>b[1]-a[1])[0];
+  const best=[...went].filter(e=>+e.rating).sort((a,b)=>(+b.rating)-(+a.rating)||(sortKey(b)>sortKey(a)?1:-1))[0];
+  const rk=(arr,unit)=>`<ol class="rcrank">${arr.map(([n,c],i)=>`<li><span class="no">${i+1}</span><span class="nm">${esc(n)}</span><span class="c">${c}${unit}</span></li>`).join('')}</ol>`;
+  $('recapBody').innerHTML=head+`
+    <div class="rcbig"><span class="n">${went.length}</span><span class="t">本のライブに行きました${days>went.length?`（のべ${days}日）`:''}</span></div>
+    <div class="rcgrid">
+      <div><span class="k">会場</span><span class="v">${venues}<small>か所</small></span></div>
+      <div><span class="k">都道府県</span><span class="v">${prefs.size}<small>か所</small></span></div>
+      ${away!==null?`<div><span class="k">遠征</span><span class="v">${away}<small>本</small></span></div>`:''}
+      <div><span class="k">いちばん行った月</span><span class="v">${topM?topM[0]+'<small>月（'+topM[1]+'本）</small>':'—'}</span></div>
+      ${cost?`<div><span class="k">ライブの費用</span><span class="v" style="font-size:20px">${yen(cost)}</span></div><div><span class="k">1本あたり</span><span class="v" style="font-size:20px">${yen(cost/costN)}</span></div>`:''}
+    </div>
+    ${best?`<div class="rcbest"><span class="memmeta">🏆 ベストライブ</span><br><b>${esc(name(best))}</b> ${starsHTML(best.rating)}<br><span class="memmeta">${esc(fmt(best.live))}${best.venue?' ・ '+esc(best.venue):''}</span>${best.impression?`<p class="impr" style="margin-top:6px">${esc(best.impression)}</p>`:''}</div>`:''}
+    ${artists.length?`<div class="rcsec"><h4>よく見たアーティスト</h4>${rk(artists,'回')}</div>`:''}
+    ${songs.length?`<div class="rcsec"><h4>よく聴いた曲</h4>${rk(songs,'回')}</div>`:''}
+    ${friends.length?`<div class="rcsec"><h4>一緒に行った人</h4>${rk(friends,'回')}</div>`:''}
+    <div class="rcsec"><h4>行ったライブ</h4><ul class="rctl">${went.map(e=>`<li><small>${esc(fmt(e.live))}</small>${esc(name(e))}${e.venue?` <span class="memmeta">@${esc(e.venue)}</span>`:''}</li>`).join('')}</ul></div>`+close;
+}
+$('recapBody').addEventListener('click',e=>{const ri=e.target.closest('[data-rcimg]');if(ri){saveRecapImg(+ri.dataset.rcimg,ri);return}const b=e.target.closest('[data-rcy]');if(b){renderRecap(+b.dataset.rcy);return}if(e.target.closest('#rcClose'))$('recapDlg').close()});
+
+/* ===== v4: 年間まとめを画像で保存 ===== */
+function recapStats(y){
+  const ys=String(y), went=events.filter(e=>wentTo(e)&&e.live.startsWith(ys)).sort((a,b)=>sortKey(a)<sortKey(b)?-1:1);
+  const rank=(arr,k)=>{const m={},nm={};for(const x of arr){const key=norm(x);if(!key)continue;m[key]=(m[key]||0)+1;nm[key]=nm[key]||x}return Object.entries(m).sort((a,b)=>b[1]-a[1]).slice(0,k).map(([key,c])=>[nm[key],c])};
+  const mon={};for(const e of went){const m=+e.live.slice(5,7);mon[m]=(mon[m]||0)+1}
+  const cost=went.reduce((n,e)=>n+costTotal(e),0);
+  const prefCnt={};for(const e of went){const p=prefOf(e);if(p)prefCnt[p]=(prefCnt[p]||0)+1}
+  return {went,
+    days:went.reduce((n,e)=>n+Math.round((parse(lastDay(e))-parse(e.live))/86400000)+1,0),
+    venues:new Set(went.map(e=>e.venue).filter(Boolean)).size,
+    prefCnt, prefs:Object.keys(prefCnt).length,
+    away:homePref?went.filter(e=>{const p=prefOf(e);return p&&p!==homePref}).length:null,
+    cost, topM:Object.entries(mon).sort((a,b)=>b[1]-a[1])[0]||null,
+    best:[...went].filter(e=>+e.rating).sort((a,b)=>(+b.rating)-(+a.rating)||(sortKey(b)>sortKey(a)?1:-1))[0]||null,
+    artists:rank(went.flatMap(e=>isFes(e)?lineupOf(e):[e.artist]),3),
+    songs:rank(went.flatMap(e=>[...new Set(songsOf(e))]),3),
+    friends:rank(went.flatMap(e=>(e.companions||'').split(/[、,，]\s*/).map(s=>s.trim()).filter(Boolean)),3)};
+}
+async function drawRecap(y){
+  const S=recapStats(y), W=1080, H=1350, acc=cssVar('--accent','#C2185B'), fes=cssVar('--c-fes','#3DD6A8'), gold=cssVar('--c-result','#F2C230');
+  const DISP='"Dela Gothic One","Zen Kaku Gothic New",sans-serif', BODY='"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic UI",sans-serif', MONO='"JetBrains Mono",Consolas,monospace';
+  try{await Promise.all([document.fonts.load('40px "Dela Gothic One"'),document.fonts.load('700 20px "Zen Kaku Gothic New"'),document.fonts.load('700 20px "JetBrains Mono"')])}catch(e){}
+  const cv=document.createElement('canvas');cv.width=W;cv.height=H;const c=cv.getContext('2d');
+  let g=c.createLinearGradient(0,0,W,H);g.addColorStop(0,'#1E1830');g.addColorStop(1,'#0B0912');c.fillStyle=g;c.fillRect(0,0,W,H);
+  g=c.createRadialGradient(W*.85,-60,10,W*.85,-60,900);g.addColorStop(0,acc+'B0');g.addColorStop(1,acc+'00');c.fillStyle=g;c.fillRect(0,0,W,H);
+  g=c.createRadialGradient(0,H,10,0,H,700);g.addColorStop(0,fes+'40');g.addColorStop(1,fes+'00');c.fillStyle=g;c.fillRect(0,0,W,H);
+  c.strokeStyle='rgba(255,255,255,.03)';c.lineWidth=1;for(let i=-H;i<W;i+=12){c.beginPath();c.moveTo(i,0);c.lineTo(i+H,H);c.stroke()}
+  g=c.createLinearGradient(0,0,W,0);['#ff9ad5','#9ee7ff','#fff2a8','#c6a4ff','#9effd6'].forEach((col,i)=>g.addColorStop(i/4,col));c.fillStyle=g;c.fillRect(0,0,W,10);
+  const L=64, R=W-64, CW=R-L;c.textBaseline='alphabetic';c.textAlign='left';
+  /* header */
+  c.fillStyle=acc;c.font=`700 24px ${MONO}`;c.fillText('L I V E   T I C K E T   B O O K',L,78);
+  c.fillStyle='#fff';c.font=`76px ${DISP}`;c.fillText(`${y} LIVE RECAP`,L,168);
+  /* big count */
+  c.fillStyle=acc;c.font=`250px ${DISP}`;const ns=String(S.went.length);c.fillText(ns,L-8,430);const nw=c.measureText(ns).width;
+  c.fillStyle='#fff';c.font=`700 44px ${BODY}`;c.fillText('本のライブ',L+nw+10,350);
+  c.fillStyle='rgba(255,255,255,.7)';c.font=`700 30px ${BODY}`;c.fillText(S.days>S.went.length?`のべ ${S.days} 日`:'に行きました',L+nw+12,405);
+  /* stat boxes */
+  const st=[['会場',S.venues,'か所'],['都道府県',S.prefs,'か所'],S.away!==null?['遠征',S.away,'本']:['いちばん行った月',S.topM?S.topM[0]:'—',S.topM?'月':''],S.cost?['ライブの費用',yen(S.cost),'']:['いちばん行った月',S.topM?S.topM[0]:'—',S.topM?'月':'']];
+  const bw=(CW-36)/4;st.forEach(([k,v,u],i)=>{const x=L+i*(bw+12),yy=470;rr(c,x,yy,bw,124,18);c.fillStyle='rgba(255,255,255,.08)';c.fill();
+    c.fillStyle='rgba(255,255,255,.65)';c.font=`700 20px ${BODY}`;c.fillText(k,x+18,yy+36);
+    c.fillStyle='#fff';const vs=String(v);c.font=`${vs.length>6?34:48}px ${DISP}`;const t=fitText(c,vs,bw-36-(u?40:0),vs.length>6?34:48,DISP,20);c.fillText(t,x+18,yy+98);
+    if(u){const tw=c.measureText(t).width;c.fillStyle='rgba(255,255,255,.7)';c.font=`700 20px ${BODY}`;c.fillText(u,x+22+tw,yy+98)}});
+  /* best live */
+  let Y=630;
+  if(S.best){rr(c,L,Y,CW,150,20);c.fillStyle='rgba(255,255,255,.08)';c.fill();c.fillStyle=gold;c.fillRect(L,Y+18,6,114);
+    c.fillStyle=gold;c.font=`700 22px ${BODY}`;c.fillText('🏆 BEST LIVE   '+'★'.repeat(+S.best.rating)+'☆'.repeat(5-(+S.best.rating)),L+30,Y+44);
+    c.fillStyle='#fff';c.fillText(fitText(c,name(S.best),CW-60,48,DISP,26),L+30,Y+100);
+    c.fillStyle='rgba(255,255,255,.65)';c.font=`700 22px ${BODY}`;c.fillText(fitText(c,[fmt(S.best.live),S.best.venue].filter(Boolean).join('  ・  '),CW-60,22,BODY,16,'700 '),L+30,Y+134);Y+=180}
+  else Y+=10;
+  /* rankings */
+  const col=(title,arr,x,w)=>{c.fillStyle='rgba(255,255,255,.6)';c.font=`700 22px ${BODY}`;c.fillText(title,x,Y);
+    arr.forEach(([n,k],i)=>{const yy=Y+24+i*62;rr(c,x,yy,w,52,12);c.fillStyle='rgba(255,255,255,.07)';c.fill();
+      c.fillStyle=acc;c.font=`700 26px ${MONO}`;c.fillText(String(i+1),x+16,yy+36);
+      c.fillStyle='#fff';c.fillText(fitText(c,n,w-130,26,BODY,16,'700 '),x+52,yy+36);
+      c.fillStyle='rgba(255,255,255,.55)';c.font=`700 20px ${MONO}`;c.textAlign='right';c.fillText(k+'回',x+w-16,yy+35);c.textAlign='left'});
+    if(!arr.length){c.fillStyle='rgba(255,255,255,.4)';c.font=`700 20px ${BODY}`;c.fillText('—',x,Y+50)}};
+  const hw=(CW-24)/2;
+  col('よく見たアーティスト',S.artists,L,hw);col('よく聴いた曲',S.songs,L+hw+24,hw);
+  Y+=24+3*62+44;
+  /* bottom: friends + mini map */
+  const mapCell=17, mapW=14*mapCell, mapH=12*mapCell, mx=R-mapW, my=Math.max(Y-6,H-110-mapH);
+  if(S.friends.length){col('一緒に行った人',S.friends,L,CW-mapW-40)}
+  c.fillStyle='rgba(255,255,255,.6)';c.font=`700 22px ${BODY}`;c.fillText('遠征マップ',mx,my-12);
+  for(const [p,cx,cy] of PREFS){const k=S.prefCnt[p]||0;rr(c,mx+cx*mapCell,my+cy*mapCell,mapCell-3,mapCell-3,3);
+    c.fillStyle=k>=3?acc:k===2?acc+'B0':k===1?acc+'66':'rgba(255,255,255,.1)';c.fill();
+    if(p===homePref){c.strokeStyle='#fff';c.lineWidth=2;c.stroke()}}
+  /* footer */
+  c.fillStyle='rgba(255,255,255,.45)';c.font=`700 18px ${MONO}`;c.fillText(`#LIVE_RECAP_${y}`,L,H-48);
+  return cv;
+}
+async function saveRecapImg(y,btn){
+  if(btn)btn.disabled=true;
+  try{const cv=await drawRecap(y);const blob=await new Promise(r=>cv.toBlob(r,'image/png'));if(!blob)throw new Error('blob');await saveBlob(blob,`live-recap-${y}.png`)}
+  catch(e){showBanner('画像を作れませんでした。もう一度お試しください。')}
+  finally{if(btn)btn.disabled=false}
+}
+
 
 
 /* ===== GitHub版：ブラウザ内保存（claude.ai のデータベースの代わり） ===== */
